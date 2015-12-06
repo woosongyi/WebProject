@@ -168,30 +168,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!--logo-->
 			<div class="logo">
 				<h1>
-					<a href="Index.jsp">REAL HOME</a>
+					<a href="Index.jsp">KOREA TOUR</a>
 				</h1>
 			</div>
 			<!--//logo-->
 			<div class="top-nav">
 				<ul class="right-icons">
-					<li><span><i class="glyphicon glyphicon-phone"> </i>+1384
-							757 546</span></li>
 					<li><a href="login.html"><i
 							class="glyphicon glyphicon-user"> </i>Login</a></li>
-					<li><a class="play-icon popup-with-zoom-anim"
-						href="#small-dialog"><i class="glyphicon glyphicon-search">
-						</i> </a></li>
-
 				</ul>
-				<div class="nav-icon">
-					<div class="hero fa-navicon fa-2x nav_slide_button" id="hero">
-						<a href="#"><i class="glyphicon glyphicon-menu-hamburger"></i>
-						</a>
-					</div>
-					<!---
-				<a href="#" class="right_bt" id="activator"><i class="glyphicon glyphicon-menu-hamburger"></i>  </a>
-			--->
-				</div>
 				<div class="clearfix"></div>
 				<!---pop-up-box---->
 
@@ -299,24 +284,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class=" banner-buying">
 		<div class=" container">
 			<h3>
-				<span>Lor</span>em
+				<span>BEST TOUR</span>
 			</h3>
 			<!---->
 			<div class="menu-right">
-				<ul class="menu">
-					<li class="item1"><a href="#"> Menu<i
-							class="glyphicon glyphicon-menu-down"> </i>
-					</a>
-						<ul class="cute">
-							<li class="subitem1"><a href="buy.html">Buy </a></li>
-							<li class="subitem2"><a href="buy.html">Rent </a></li>
-							<li class="subitem3"><a href="buy.html">Hostels </a></li>
-							<li class="subitem1"><a href="buy.html">Resale </a></li>
-							<li class="subitem2"><a href="loan.html">Home Loan</a></li>
-							<li class="subitem3"><a href="buy.html">Apartment </a></li>
-							<li class="subitem3"><a href="dealers.html">Dealers</a></li>
-						</ul></li>
-				</ul>
+
 			</div>
 			<div class="clearfix"></div>
 			<!--initiate accordion-->
@@ -418,7 +390,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="clearfix"></div>
 				</div>
 				<div class="map-buy-single">
-					<h4>관광지 주변 지도 정보</h4>
+					<h4>Map Information</h4>
 
 					<!-- 지도를 표시할 div 입니다 -->
 							<div class="map-buy-single">
@@ -510,74 +482,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<!--footer-->
 	<div class="footer">
-		<div class="container">
-			<div class="footer-top-at">
-				<div class="col-md-3 amet-sed">
-					<h4>Our Company</h4>
-					<ul class="nav-bottom">
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="blog.html">For Sale By Owner Blog</a></li>
-						<li><a href="mobile_app.html">Mobile</a></li>
-						<li><a href="terms.html">Terms & Conditions</a></li>
-						<li><a href="privacy.html">Privacy Policy</a></li>
-						<li><a href="blog.html">Blog</a></li>
-
-					</ul>
-				</div>
-				<div class="col-md-3 amet-sed ">
-					<h4>Work With Us</h4>
-					<ul class="nav-bottom">
-						<li><a href="single.html">Real Estate Brokers</a></li>
-						<li><a href="single.html">Business Development</a></li>
-						<li><a href="single.html">Affiliate Programs</a></li>
-						<li><a href="contact.html">Sitemap</a></li>
-						<li><a href="career.html">Careers</a></li>
-						<li><a href="feedback.html">Feedback</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 amet-sed">
-					<h4>Customer Support</h4>
-					<p>Mon-Fri, 7AM-7PM</p>
-					<p>Sat-Sun, 8AM-5PM</p>
-					<p>177-869-6559</p>
-					<ul class="nav-bottom">
-						<li><a href="#">Live Chat</a></li>
-						<li><a href="faqs.html">Frequently Asked Questions</a></li>
-						<li><a href="suggestion.html">Make a Suggestion</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 amet-sed ">
-					<h4>Property Services</h4>
-					<ul class="nav-bottom">
-						<li><a href="single.html">Residential Property</a></li>
-						<li><a href="single.html">Commercial Property</a></li>
-						<li><a href="login.html">Login</a></li>
-						<li><a href="register.html">Register</a></li>
-						<li><a href="typo.html">Short Codes</a></li>
-					</ul>
-					<ul class="social">
-						<li><a href="#"><i> </i></a></li>
-						<li><a href="#"><i class="gmail"> </i></a></li>
-						<li><a href="#"><i class="twitter"> </i></a></li>
-						<li><a href="#"><i class="camera"> </i></a></li>
-						<li><a href="#"><i class="dribble"> </i></a></li>
-					</ul>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="col-md-4 footer-logo">
 					<h2>
-						<a href="Index.jsp">REAL HOME</a>
+						<a href="Index.jsp">KOREA TOUR</a>
 					</h2>
 				</div>
 				<div class="col-md-8 footer-class">
-					<p>
-						© 2015 Real Home. All Rights Reserved | Design by <a
-							href="http://w3layouts.com/" target="_blank">W3layouts</a>
-					</p>
+					<p>2015 Korea Tour. All Rights Reserved | Design by songyi</p>
 				</div>
 				<div class="clearfix"></div>
 			</div>
