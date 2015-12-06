@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Member.Action.JoinAction;
 import Member.Action.LoginAction;
 import ServiceManager.ServiceForward;
 import ServiceManager.ServiceInterface;
@@ -46,8 +47,13 @@ public class MemberController extends HttpServlet {
 
 		switch (cmd) 
 		{
-			case "joinMember" :
-				System.out.println("joinMember");
+			case "join" :
+				action = new JoinAction();
+				try {
+					forwardAction = action.execute(request, response);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			break;
 			
 			case "login" :

@@ -44,15 +44,13 @@ public class JoinAction implements ServiceInterface
 		
 			forward.setRedirect(true);
 			forward.setPath("./Index.jsp");
-			// 회원 가입 성공 알리기 리턴 주소 지정
-			Util.set_MessageBox("회원 가입이 되었습니다.", response);
+			
 		}
 		else // 회원 가입이 안되었을때
 		{
 			forward.setRedirect(false);
 			forward.setPath("./Index.jsp");
-			// 회원 가입 실패 알리기
-			Util.set_MessageBox("회원에 실패 하였습니다.", response);
+		
 		}
 		
 		return forward;
