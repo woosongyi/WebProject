@@ -24,7 +24,7 @@ public class DBManager
 		try 
 		{
 			init = new InitialContext();
-			ds = (DataSource) init.lookup("java:comp/env/jdbc/loginDB");
+			ds = (DataSource) init.lookup("java:comp/env/jdbc/member");
 		} 
 		catch (NamingException e){e.printStackTrace();}
 	}

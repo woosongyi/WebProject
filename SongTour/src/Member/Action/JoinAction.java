@@ -34,6 +34,8 @@ public class JoinAction implements ServiceInterface
 		// 회원 가입 처리
 		boolean joinCheck = MemberDAO.insertMember(dto);
 		
+		forward = new ServiceForward();
+		
 		if(joinCheck) // 회원 가입이 되었을때 
 		{
 			/** 회원 가입 정보, 로그인 정보는 세션 영역에 저장 한다. */
