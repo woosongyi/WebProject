@@ -33,7 +33,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	
 	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
 
 
 
@@ -55,6 +57,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </head>
 <body>
+
+	<%
+		String msg = request.getParameter("msg");
+	if(msg != null)
+	{
+		if (msg.equals("success")) // 메세지가 null값이 아닐때
+		{
+			response.setContentType("text/html;charset=euc-kr");
+			out.println("<script>");
+			out.println("alert('로그인에 성공하였습니다');");
+			out.println("</script>");
+
+		}
+	}
+	%>
+
 	<!--header-->
 	<div class="navigation">
 		<div class="container-fluid">
@@ -81,10 +99,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<!--//logo-->
 			<div class="top-nav">
-				<ul class="right-icons">
-					<li><a href="login.html"><i
-							class="glyphicon glyphicon-user"> </i>Login</a></li>
-				</ul>
+				<c:if test="${empty sessionScope.member}">
+					<!-- 로그인 표시 -->
+					<ul class="right-icons">
+						<li><a href="Login.jsp"><i
+								class="glyphicon glyphicon-user"> </i>Login</a></li>
+					</ul>
+				</c:if>
+				
+				<c:if test="${not empty sessionScope.member}">
+					<!-- 로그인 표시 -->
+					<ul class="right-icons">
+						<li><a href="Login.jsp"><i
+								class="glyphicon glyphicon-user"> </i>${sessionScope.member.email}</a></li>
+					</ul>
+				</c:if>
+				
 				<div class="clearfix"></div>
 				<!---pop-up-box---->
 
@@ -298,7 +328,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-6 phone-text">
 					<h4>Search Places Around My location</h4>
-					
+
 					<div class="text-1">
 						<h5>Map Search</h5>
 						<p>There are many variations of places around your location</p>

@@ -79,6 +79,7 @@ public class MemberController extends HttpServlet {
 				dis.forward(request, response);
 			}
 		}// if end
+		
 
 	}
 

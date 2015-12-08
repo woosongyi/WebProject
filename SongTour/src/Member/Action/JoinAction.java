@@ -45,13 +45,13 @@ public class JoinAction implements ServiceInterface
 			session.setAttribute("member", dto);
 		
 			forward.setRedirect(true);
-			forward.setPath("./Index.jsp");
+			forward.setPath("./Index.jsp?msg=success");
 			
 		}
 		else // 회원 가입이 안되었을때
 		{
 			forward.setRedirect(false);
-			forward.setPath("./Index.jsp");
+			forward.setPath("./Register.jsp?msg=fail");
 		
 		}
 		

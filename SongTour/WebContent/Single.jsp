@@ -174,7 +174,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!--//logo-->
 			<div class="top-nav">
 				<ul class="right-icons">
-					<li><a href="login.html"><i
+					<li><a href="Login.jsp"><i
 							class="glyphicon glyphicon-user"> </i>Login</a></li>
 				</ul>
 				<div class="clearfix"></div>

@@ -32,12 +32,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 
+<%
+		// 로그인 실패 메세지 체크
+		String msg = request.getParameter("msg");
+
+	if(msg != null)
+	{
+		if (msg.equals("fail")) // 메세지가 null값이 아닐때
+		{
+			response.setContentType("text/html;charset=euc-kr");
+			out.println("<script>");
+			out.println("alert('아이디 또는 비밀번호가 틀렸습니다.');");
+			out.println("</script>");
+
+		}
+	}
+%>
+
 	<!--header-->
 	<div class="navigation">
 		<div class="container-fluid">
 			<nav class="pull">
 			<ul>
-				<li><a href="index.html">Home</a></li>
+				<li><a href="Index.jsp">Home</a></li>
 				<li><a href="about.html">About Us</a></li>
 				<li><a href="blog.html">Blog</a></li>
 				<li><a href="terms.html">Terms</a></li>
@@ -53,14 +70,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!--logo-->
 			<div class="logo">
 				<h1>
-					<a href="index.html">REAL HOME</a>
+					<a href="Index.jsp">REAL HOME</a>
 				</h1>
 			</div>
 			<!--//logo-->
 			<div class="top-nav">
 				<ul class="right-icons">
-					<li><span><i class="glyphicon glyphicon-phone"> </i>+1384
-							757 546</span></li>
 					<li><a href="login.html"><i
 							class="glyphicon glyphicon-user"> </i>Login</a></li>
 					<li><a class="play-icon popup-with-zoom-anim"
@@ -245,7 +260,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="create">
 					<h4>새로운 계정을 생성 하시겠습니까?</h4>
-					<a class="hvr-sweep-to-right" href="register.html">Create an
+					<a class="hvr-sweep-to-right" href="Register.jsp">Create an
 						Account</a>
 					<div class="clearfix"></div>
 				</div>
@@ -297,7 +312,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="single.html">Residential Property</a></li>
 						<li><a href="single.html">Commercial Property</a></li>
 						<li><a href="login.html">Login</a></li>
-						<li><a href="register.html">Register</a></li>
+						<li><a href="Register.jsp">Register</a></li>
 						<li><a href="typo.html">Short Codes</a></li>
 					</ul>
 					<ul class="social">
@@ -315,7 +330,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="container">
 				<div class="col-md-4 footer-logo">
 					<h2>
-						<a href="index.html">REAL HOME</a>
+						<a href="Index.jsp">REAL HOME</a>
 					</h2>
 				</div>
 				<div class="col-md-8 footer-class">

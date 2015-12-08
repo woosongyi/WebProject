@@ -39,19 +39,21 @@ public class LoginAction implements ServiceInterface{ // 로그인을 처리하�
 		{
 			// request 세션에 login 데이터를 넣어 준다.
 			
+			String msg = "로그인에 성공 하였습니다";
 			
 			HttpSession session = request.getSession();
     		session.setAttribute("member", data);
     		Fowardaction.setRedirect(false);
-    		Fowardaction.setPath("./Index.jsp");
-    		
+    		Fowardaction.setPath("./Index.jsp?msg=success");
     		
 		}
 		else // 로그인 실패시 notice page로 이동
 		{
 			String msg="아이디 또는 비밀번호가 틀려요!";
-			Fowardaction.setRedirect(false);
-    		Fowardaction.setPath("./Login.jsp");
+			
+			Fowardaction.setRedirect(true);
+    		Fowardaction.setPath("./Login.jsp?msg=fail");
+    	   	   		
     		
 		}
 		
