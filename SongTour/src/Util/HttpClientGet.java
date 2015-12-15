@@ -20,7 +20,7 @@ public class HttpClientGet {
 		try {
 			HttpGet httpget = new HttpGet(url);
  
-			System.out.println("executing request " + httpget.getURI());
+			System.out.println("요청주소 request " + httpget.getURI());
 			HttpResponse response = httpclient.execute(httpget);
 			HttpEntity entity = response.getEntity();
  

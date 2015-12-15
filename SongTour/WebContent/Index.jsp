@@ -34,7 +34,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	
 	
+	
+	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
+
+
 
 
 
@@ -60,17 +66,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<%
 		String msg = request.getParameter("msg");
-	if(msg != null)
-	{
-		if (msg.equals("success")) // 메세지가 null값이 아닐때
-		{
-			response.setContentType("text/html;charset=euc-kr");
-			out.println("<script>");
-			out.println("alert('로그인에 성공하였습니다');");
-			out.println("</script>");
-
+		if (msg != null) {
+			if (msg.equals("success")) // 메세지가 null값이 아닐때
+			{
+				response.setContentType("text/html;charset=euc-kr");
+				out.println("<script>");
+				out.println("alert('로그인에 성공하였습니다');");
+				out.println("</script>");
+			}
 		}
-	}
 	%>
 
 	<!--header-->
@@ -106,15 +110,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								class="glyphicon glyphicon-user"> </i>Login</a></li>
 					</ul>
 				</c:if>
-				
+
 				<c:if test="${not empty sessionScope.member}">
 					<!-- 로그인 표시 -->
 					<ul class="right-icons">
 						<li><a href="Login.jsp"><i
-								class="glyphicon glyphicon-user"> </i>${sessionScope.member.email}</a></li>
+								class="glyphicon glyphicon-user"> </i>${sessionScope.member.email}
+						</a></li>
 					</ul>
 				</c:if>
-				
+
 				<div class="clearfix"></div>
 				<!---pop-up-box---->
 
@@ -291,6 +296,66 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--//header-->
 	<!--content-->
 	<div class="content">
+		<!--  로그인 되었을때 사는곳 주변 관광지 -->
+		<c:if test="${not empty sessionScope.cityList}">
+			<!-- 검색 결과가 있을때만 표시 한다. -->
+			<div class="content-grid">
+				<div class="container">
+					<!-- 검색 결과 표시지점 -->
+
+					<h3>City List</h3>
+
+					<c:forEach var="vo" items="${sessionScope.cityList}">
+						<div class="col-md-4 box_2">
+							<a href=Search.do?cmd=searchinfo&contentid=${vo.contentid}
+								class="mask"> <img class="img-responsive zoom-img"
+								src="${vo.firstimage }" width=420 height=316 alt="">
+							</a>
+							<div class="most-1">
+								<h5>${vo.title }</h5>
+								<p>${vo.address }</p>
+							</div>
+						</div>
+
+
+					</c:forEach>
+
+					<div class="clearfix"></div>
+				</div>
+				<!-- 검색 결과 container end -->
+			</div>
+		</c:if>
+
+		<!-- 로그인 되었을때 취미를 통한 검색  -->
+
+		<c:if test="${not empty sessionScope.hobbyList}">
+			<div class="content-grid">
+				<div class="container">
+					<!-- 검색 결과 표시지점 -->
+
+					<h3>hobby List</h3>
+
+					<c:forEach var="vo" items="${sessionScope.hobbyList}">
+						<div class="col-md-4 box_2">
+							<a href=Search.do?cmd=searchinfo&contentid=${vo.contentid}
+								class="mask"> <img class="img-responsive zoom-img"
+								src="${vo.firstimage }" width=420 height=316 alt="">
+							</a>
+							<div class="most-1">
+								<h5>${vo.title }</h5>
+								<p>${vo.address }</p>
+							</div>
+						</div>
+
+
+					</c:forEach>
+
+					<div class="clearfix"></div>
+				</div>
+				<!-- 검색 결과 container end -->
+			</div>
+		</c:if>
+
 		<c:if test="${not empty sessionScope.resultTour }">
 			<!-- 검색 결과가 있을때만 표시 한다. -->
 			<div class="content-grid">

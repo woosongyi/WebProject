@@ -20,7 +20,7 @@ public class MemberDAO  // 멤버 DB 접근처리 클래스
 		
 		StringBuffer SQL = new StringBuffer();
 		SQL.append("Insert into member");
-		SQL.append(" values (?,?,?)");
+		SQL.append(" values (?,?,?,?,?,?,?)");
 		
 		try
 		{
@@ -28,6 +28,10 @@ public class MemberDAO  // 멤버 DB 접근처리 클래스
 			pstmt.setObject(1, data.getName(), Types.VARCHAR);
 			pstmt.setObject(2, data.getPass(), Types.VARCHAR);
 			pstmt.setObject(3, data.getEmail(), Types.VARCHAR);
+			pstmt.setObject(4, data.getHobby(), Types.VARCHAR);
+			pstmt.setObject(5, data.getSi(), Types.VARCHAR);
+			pstmt.setObject(6, data.getGu(), Types.VARCHAR);
+			pstmt.setObject(7, data.getGun(), Types.VARCHAR);
 
 			int n=pstmt.executeUpdate();
 			
@@ -61,7 +65,7 @@ public class MemberDAO  // 멤버 DB 접근처리 클래스
 
 			// db 결과 가져오기
 			StringBuffer SQL = new StringBuffer();
-			SQL.append("SELECT pass FROM member WHERE email=?");
+			SQL.append("SELECT * FROM member WHERE email=?");
 
 			try {
 				// 쿼리 설정
@@ -82,12 +86,30 @@ public class MemberDAO  // 멤버 DB 접근처리 클래스
 				{
 					while (query_result.next()) 
 					{
-
-						String _pwd = query_result.getString(1);
+						// 필드 내용 파싱해오기
+						String _name = query_result.getString(1);
+						String _pwd = query_result.getString(2);
+						String _email = query_result.getString(3);
+						String _hobby = query_result.getString(4);
+						String _si = query_result.getString(5);
+						String _gu = query_result.getString(6);
+						String _gun = query_result.getString(7);
 
 						if (data.getPass().equals(_pwd))// 회원정보가 비밀번호와 일치 하는 경우
 						{
 							check = true;
+							
+							// 데이터 지정해주기
+							data.setName(_name);
+							data.setPass(_pwd);
+							data.setEmail(_email);
+							data.setHobby(_hobby);
+							data.setSi(_si);
+							data.setGu(_gu);
+							data.setGun(_gun);
+							
+							System.out.println("로그인 데이터 지정 후 : "+data.toString());
+							
 						} 
 						else // 회원 정보와 비밀번호가 일치 안하는 경우
 						{

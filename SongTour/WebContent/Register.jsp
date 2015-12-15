@@ -75,7 +75,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!--//logo-->
 			<div class="top-nav">
 				<ul class="right-icons">
-					<li><a href="login.html"><i
+					<li><a href="Login.jsp"><i
 							class="glyphicon glyphicon-user"> </i>Login</a></li>
 					<li><a class="play-icon popup-with-zoom-anim"
 						href="#small-dialog"><i class="glyphicon glyphicon-search">
@@ -250,15 +250,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 				<div class="form-info">
 					<form action="Member.do?cmd=join" method="post">
-						<input type="text" name="name" placeholder="Name" required=""> <input
-							type="text" name = "email" placeholder="Email Adress" required=""> <input
-							type="password" name = "pass" placeholder="Password " required=""> <label
-							class="hvr-sweep-to-right"> <input type="submit"
+						<input type="text" name="name" placeholder="Name" required=""> 
+						<input type="text" name = "email" placeholder="Email Adress" required=""> 
+						<input type="password" name = "pass" placeholder="Password " required="">
+						<input type="text" name="hobby" placeholder="Hobby" required="">
+						<input type="text" name="si" placeholder="시" required="">
+						<input type="text" name="gu" placeholder="구" required="">
+						<input type="text" name="gun" placeholder="군" required=""> 
+						<label class="hvr-sweep-to-right"> <input type="submit"
 							value="Sign Up">
 						</label>
 					</form>
 					<p>
-						Already have a Real Home account? <a href="login.html">Login</a>
+						Already have a Real Home account? <a href="Login.jsp">Login</a>
 					</p>
 				</div>
 

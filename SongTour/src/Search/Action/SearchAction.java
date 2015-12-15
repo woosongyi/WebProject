@@ -30,7 +30,7 @@ public class SearchAction implements ServiceInterface{
 		ServiceForward Fowardaction = null;
 		
 		String key1 = request.getParameter("keyword");
-		System.out.println(key1);
+		System.out.println("검색할 키워드 : "+key1);
 		
 		
 		String keyword="";
@@ -47,7 +47,7 @@ public class SearchAction implements ServiceInterface{
 		String url = "http://api.visitkorea.or.kr/openapi/service/rest/KorService/searchKeyword?ServiceKey=Nj2mm9sqh%2B2lT6DWJ7fdqA0db%2Bzw40B%2BIomiB7fkkj6dWgos8obmHPllcAE1BbX0Uy8kyl%2FIFDbzRBh%2B%2BXf9QQ%3D%3D"
 				+ "&keyword=" + keyword + "&MobileOS=ETC&MobileApp=KoreaTourismOrganization&_type=json";
 		
-		System.out.println(url);
+		System.out.println("요청주소 : "+url);
 		// 다음 서버로 부터 json 받아오기 
 		String json = HttpClientGet.get_JSONDATA(url);
 		
@@ -77,7 +77,7 @@ public class SearchAction implements ServiceInterface{
 		
 	}
 
-	private void JsonParsing(ArrayList<TourDTO> tour_list, String json) throws ParseException, UnsupportedEncodingException{
+	public static void JsonParsing(ArrayList<TourDTO> tour_list, String json) throws ParseException, UnsupportedEncodingException{
 		// TODO Auto-generated method stub
 		
 		JSONParser parser = new JSONParser();
