@@ -69,7 +69,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!--logo-->
 			<div class="logo">
 				<h1>
-					<a href="Index.jsp">REAL HOME</a>
+					<a href="Index.jsp">KOREA TOUR</a>
 				</h1>
 			</div>
 			<!--//logo-->
@@ -77,20 +77,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<ul class="right-icons">
 					<li><a href="Login.jsp"><i
 							class="glyphicon glyphicon-user"> </i>Login</a></li>
-					<li><a class="play-icon popup-with-zoom-anim"
-						href="#small-dialog"><i class="glyphicon glyphicon-search">
-						</i> </a></li>
-
 				</ul>
-				<div class="nav-icon">
-					<div class="hero fa-navicon fa-2x nav_slide_button" id="hero">
-						<a href="#"><i class="glyphicon glyphicon-menu-hamburger"></i>
-						</a>
-					</div>
-					<!---
-				<a href="#" class="right_bt" id="activator"><i class="glyphicon glyphicon-menu-hamburger"></i>  </a>
-			--->
-				</div>
 				<div class="clearfix"></div>
 				<!---pop-up-box---->
 
@@ -201,22 +188,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<span>Regis</span>ter
 			</h3>
 			<!---->
-			<div class="menu-right">
-				<ul class="menu">
-					<li class="item1"><a href="#"> Menu<i
-							class="glyphicon glyphicon-menu-down"> </i>
-					</a>
-						<ul class="cute">
-							<li class="subitem1"><a href="buy.html">Buy </a></li>
-							<li class="subitem2"><a href="buy.html">Rent </a></li>
-							<li class="subitem3"><a href="buy.html">Hostels </a></li>
-							<li class="subitem1"><a href="buy.html">Resale </a></li>
-							<li class="subitem2"><a href="loan.html">Home Loan</a></li>
-							<li class="subitem3"><a href="buy.html">Apartment </a></li>
-							<li class="subitem3"><a href="dealers.html">Dealers</a></li>
-						</ul></li>
-				</ul>
-			</div>
 			<div class="clearfix"></div>
 			<!--initiate accordion-->
 			<script type="text/javascript">

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- JSTL 라이브러리 설정 -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
 <title>Real Home A Real Estate Category Flat Bootstarp Resposive
@@ -25,29 +27,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript">
 	
 	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
 
 
 </script>
 </head>
 <body>
 
-<%
+	<%
 		// 로그인 실패 메세지 체크
 		String msg = request.getParameter("msg");
 
-	if(msg != null)
-	{
-		if (msg.equals("fail")) // 메세지가 null값이 아닐때
-		{
-			response.setContentType("text/html;charset=euc-kr");
-			out.println("<script>");
-			out.println("alert('아이디 또는 비밀번호가 틀렸습니다.');");
-			out.println("</script>");
+		if (msg != null) {
+			if (msg.equals("fail")) // 메세지가 null값이 아닐때
+			{
+				response.setContentType("text/html;charset=euc-kr");
+				out.println("<script>");
+				out.println("alert('아이디 또는 비밀번호가 틀렸습니다.');");
+				out.println("</script>");
 
+			}
 		}
-	}
-%>
+	%>
 
 	<!--header-->
 	<div class="navigation">
@@ -70,28 +73,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!--logo-->
 			<div class="logo">
 				<h1>
-					<a href="Index.jsp">REAL HOME</a>
+					<a href="Index.jsp">KOREA TOUR</a>
 				</h1>
 			</div>
 			<!--//logo-->
 			<div class="top-nav">
-				<ul class="right-icons">
-					<li><a href="Login.jsp"><i
-							class="glyphicon glyphicon-user"> </i>Login</a></li>
-					<li><a class="play-icon popup-with-zoom-anim"
-						href="#small-dialog"><i class="glyphicon glyphicon-search">
-						</i> </a></li>
+				<c:if test="${empty sessionScope.member}">
+					<!-- 로그인 표시 -->
+					<ul class="right-icons">
+						<li><a href="Login.jsp"><i
+								class="glyphicon glyphicon-user"> </i>Login</a></li>
+					</ul>
+				</c:if>
 
-				</ul>
-				<div class="nav-icon">
-					<div class="hero fa-navicon fa-2x nav_slide_button" id="hero">
-						<a href="#"><i class="glyphicon glyphicon-menu-hamburger"></i>
-						</a>
-					</div>
-					<!---
-				<a href="#" class="right_bt" id="activator"><i class="glyphicon glyphicon-menu-hamburger"></i>  </a>
-			--->
-				</div>
+				<c:if test="${not empty sessionScope.member}">
+					<!-- 로그인 표시 -->
+					<ul class="right-icons">
+						<li><a href="Login.jsp"><i
+								class="glyphicon glyphicon-user"> </i>${sessionScope.member.email}
+						</a></li>
+						<li><a href="Member.do?cmd=Logout">로그아웃</a></li>
+					</ul>
+				</c:if>
 				<div class="clearfix"></div>
 				<!---pop-up-box---->
 				<link href="css/popuo-box.css" rel="stylesheet" type="text/css"
@@ -201,22 +204,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<span>Log</span>in
 			</h3>
 			<!---->
-			<div class="menu-right">
-				<ul class="menu">
-					<li class="item1"><a href="#"> Menu<i
-							class="glyphicon glyphicon-menu-down"> </i>
-					</a>
-						<ul class="cute">
-							<li class="subitem1"><a href="buy.html">Buy </a></li>
-							<li class="subitem2"><a href="buy.html">Rent </a></li>
-							<li class="subitem3"><a href="buy.html">Hostels </a></li>
-							<li class="subitem1"><a href="buy.html">Resale</a></li>
-							<li class="subitem2"><a href="loan.html">Home Loan</a></li>
-							<li class="subitem3"><a href="buy.html">Apartment </a></li>
-							<li class="subitem3"><a href="dealers.html">Dealers</a></li>
-						</ul></li>
-				</ul>
-			</div>
 			<div class="clearfix"></div>
 			<!--initiate accordion-->
 			<script type="text/javascript">
@@ -247,13 +234,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<h3>Login</h3>
 			<div class="login-top">
-				<div class="form-info"> <!--  로그인 처리 부분 -->
-	
+				<div class="form-info">
+					<!--  로그인 처리 부분 -->
+
 					<form action="Member.do?cmd=login" method="post">
-						<input type="text" name="email" class="text" placeholder="Email Adress"
-							required=""> <input type="password" name = "pass"
-							placeholder="Password" required=""> <label
-							class="hvr-sweep-to-right"> <input type="submit"
+						<input type="text" name="email" class="text"
+							placeholder="Email Adress" required=""> <input
+							type="password" name="pass" placeholder="Password" required="">
+						<label class="hvr-sweep-to-right"> <input type="submit"
 							value="Submit">
 						</label>
 					</form>

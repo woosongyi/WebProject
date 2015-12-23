@@ -196,9 +196,7 @@ public class SearchLocationDetailAction implements ServiceInterface{
 				}
 			}// ifend
 			
-			
-			
-			
+
 		}
 	}
 	

@@ -117,9 +117,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="Login.jsp"><i
 								class="glyphicon glyphicon-user"> </i>${sessionScope.member.email}
 						</a></li>
+						<li><a href="Member.do?cmd=Logout">로그아웃</a></li>
 					</ul>
 				</c:if>
-
+				
 				<div class="clearfix"></div>
 				<!---pop-up-box---->
 

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Member.Action.JoinAction;
+import Member.Action.LogOutAction;
 import Member.Action.LoginAction;
 import ServiceManager.ServiceForward;
 import ServiceManager.ServiceInterface;
@@ -64,6 +65,18 @@ public class MemberController extends HttpServlet {
 					e.printStackTrace();
 				}
 			break;
+			
+			case "Logout" : // 로그아웃 액션 처리 
+				action = new LogOutAction();
+				
+				try 
+				{
+					forwardAction = action.execute(request, response);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		break;
 		} // switch end
 
 		if (forwardAction != null) 

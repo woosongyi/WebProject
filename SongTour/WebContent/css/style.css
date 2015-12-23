@@ -336,7 +336,7 @@ h2.resp-accordion:hover{
   	width: 93%;
   	border: none;
   	font-size: 1.1em;
-  	color: #DADADA;
+  	color: #000000;
 }
 .login input[type="submit"] {	
 	width: 32px;

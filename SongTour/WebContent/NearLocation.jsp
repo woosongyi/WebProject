@@ -85,11 +85,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<!--//logo-->
 			<div class="top-nav">
-				<ul class="right-icons">		
-					<li><a href="login.html"><i
-							class="glyphicon glyphicon-user"> </i>Login</a></li>
-				</ul>
+			<c:if test="${empty sessionScope.member}">
+					<!-- 로그인 표시 -->
+					<ul class="right-icons">
+						<li><a href="Login.jsp"><i
+								class="glyphicon glyphicon-user"> </i>Login</a></li>
+					</ul>
+				</c:if>
 
+				<c:if test="${not empty sessionScope.member}">
+					<!-- 로그인 표시 -->
+					<ul class="right-icons">
+						<li><a href="Login.jsp"><i
+								class="glyphicon glyphicon-user"> </i>${sessionScope.member.email}
+						</a></li>
+						<li><a href="Member.do?cmd=Logout">로그아웃</a></li>
+					</ul>
+				</c:if>
 				<!---pop-up-box---->
 
 				<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
@@ -163,7 +175,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<script>
 				var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 				mapOption = {
-					center : new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+					center : new daum.maps.LatLng(37.6581297, 126.9939306), // 지도의 중심좌표
 					level : 3
 				// 지도의 확대 레벨 
 				};
